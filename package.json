@@ -1,0 +1,44 @@
+{
+  "name": "mulytictest",
+  "version": "1.0.0",
+  "description": "![Mulytic Labs GmbH](https://mulytic-web-content.s3.amazonaws.com/media/Mulytic/Photos/Logo/Color_logo_-_no_background.png) # Mulytic Front End Engineering Challenge",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve --mode development",
+    "build": "webpack build --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pretomhira/MulyticTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pretomhira/MulyticTest/issues"
+  },
+  "homepage": "https://github.com/pretomhira/MulyticTest#readme",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.24",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
