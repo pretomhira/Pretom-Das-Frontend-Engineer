@@ -4,6 +4,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "index.bundle.js",
+    library: "ReactRouterRedux",
+    libraryTarget: "umd",
   },
   devServer: {
     port: 3010,

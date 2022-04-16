@@ -1,16 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
-
-function Blog() {
+function Home() {
   const [blogType, setBlogType] = useState("blogs");
-  const { type } = useParams();
 
   const getData = async () => {
     try {
       const res = await fetch(
-        `https://www.reddit.com/r/${type}/top.json?limit=1&t=day`
+        `https://www.reddit.com/r/reactjs/top.json?limit=1&t=day`
       );
       const data = await res.json();
 
@@ -22,17 +19,17 @@ function Blog() {
   };
   useEffect(() => {
     getData();
-  }, [type]);
+  }, []);
 
   return (
     <div>
       <div>
         <h1 className="max-w-7xl mx-auto text-5xl text-center mt-10 mb-2">
-          {type}
+          Reactjs
         </h1>
       </div>
       <div>{blogType}</div>
     </div>
   );
 }
-export default Blog;
+export default Home;
