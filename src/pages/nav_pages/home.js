@@ -1,16 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-function blogs(info) {
-  return (
-    <div className="max-w-7xl mx-auto text-lg py-5" key={info.data.id}>
-      {info.data.title}
-    </div>
-  );
-}
-
 function Home() {
-  const [blogType, setBlogType] = useState([]);
+  const [children, setChildren] = useState([]);
 
   const getData = async () => {
     try {
@@ -18,8 +10,7 @@ function Home() {
         `https://www.reddit.com/r/reactjs/top.json?limit=10&t=day`
       );
       const data = await res.json();
-
-      setBlogType(data.data.children);
+      setChildren(data.data.children);
       console.log(data.data.children);
     } catch (e) {
       console.log(e);
@@ -30,14 +21,39 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <>
       <div>
         <h1 className="max-w-7xl mx-auto text-5xl text-center mt-10 mb-2">
-          ReactJs
+          reactjs
         </h1>
       </div>
-      {blogType.map(blogs)}
-    </div>
+      <div className=" w-full h-auto ml-4 bg-white shadow-lg">
+        {children.map((element) => {
+          return (
+            <div
+              key={element?.data.id}
+              className=" w-full h-auto shadow-sm flex flex-col pb-4 ml-6"
+            >
+              <div className=" w-11/12 h-auto flex flex-row ">
+                <h1 className=" text-lg text-green-600"> Title : </h1>
+                <h1 className=" ml-2 mt-1">{element?.data.title}</h1>
+              </div>
+              <div className=" w-11/12 h-auto flex flex-row">
+                <h1 className="text-lg text-green-600 ">author: </h1>
+                <h1 className=" ml-2 mt-1">{element?.data.author}</h1>
+              </div>
+              <div className=" w-11/12 h-auto flex flex-row">
+                <h1 className="text-lg text-green-600">Text: </h1>
+                <p className=" ml-2 mt-3">{element?.data.selftext}</p>
+              </div>
+              <br />
+              <br />
+              <hr />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 export default Home;

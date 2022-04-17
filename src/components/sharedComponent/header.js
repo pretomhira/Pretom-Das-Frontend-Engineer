@@ -12,7 +12,7 @@ const Header = ({ showSidebar, isSideBarOpen }) => {
         <Navbar />
       </div>
 
-      <div className=" w-2/5 h-36 absolute right-2 bottom-2">
+      <div className=" w-2/5 h-36 fixed right-2 bottom-2">
         <FloatIndex />
       </div>
     </div>
