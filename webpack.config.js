@@ -6,10 +6,12 @@ module.exports = {
     filename: "index.bundle.js",
     library: "ReactRouterRedux",
     libraryTarget: "umd",
+    publicPath: "/",
   },
   devServer: {
     port: 3010,
     static: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [

@@ -8,11 +8,13 @@ const Header = ({ showSidebar, isSideBarOpen }) => {
   useEffect(() => {}, []);
   return (
     <div className="">
-      <div className="max-w-7xl mx-auto p-4 pb-0 border-b-2 border-gray-400 ">
-        <Navbar />
+      <div className="fixed top-0 z-10 w-full bg-white">
+        <div className="max-w-7xl mx-auto p-4 pb-0 ">
+          <Navbar />
+        </div>
       </div>
 
-      <div className=" w-2/5 h-36 fixed right-2 bottom-2">
+      <div className=" w-full fixed right-2 bottom-2 z-10">
         <FloatIndex />
       </div>
     </div>

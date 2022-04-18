@@ -25,34 +25,43 @@ function Blog() {
 
   return (
     <>
-      <div>
-        <h1 className="max-w-7xl mx-auto text-5xl text-center mt-10 mb-2">
-          {type}
-        </h1>
-      </div>
-      <div className=" w-full h-auto ml-4 bg-white shadow-lg">
+      <div className=" bg-white flex flex-col gap-y-4 max-w-7xl mx-auto mt-32">
         {children.map((element) => {
           return (
-            <div
-              key={element?.data.id}
-              className=" w-full h-auto shadow-sm flex flex-col pb-4 ml-6"
-            >
+            <div key={element?.data.id}>
               <Link to={`/${type}/${element?.data.id}`}>
-                <div className=" w-11/12 h-auto flex flex-row ">
-                  <h1 className=" text-lg text-green-600"> Title : </h1>
-                  <h1 className=" ml-2 mt-1">{element?.data.title}</h1>
+                <div className="flex flex-row gap-x-4 p-4 drop-shadow-md shadow-sm hover:shadow-xl bg-white">
+                  <div
+                    className={` ${
+                      element.data.thumbnail == ("self" || "")
+                        ? "hidden"
+                        : "block"
+                    }`}
+                  >
+                    <img className="w-32 h-20" src={element?.data.thumbnail} />
+                  </div>
+                  <div className="flex flex-col w-full gap-y-2">
+                    <div>
+                      <h1 className="text-2xl font-bold capitalize">
+                        {element?.data.title.substring(0, 50)}...
+                      </h1>
+                    </div>
+
+                    <div>
+                      <h1 className=" text-sm text-gray-500">
+                        Written by{" "}
+                        <span className="text-gray-600 font-bold">
+                          {element?.data.author}
+                        </span>
+                      </h1>
+                    </div>
+                    <div>
+                      <p className=" text-base">
+                        {element?.data.selftext.substring(0, 250)}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className=" w-11/12 h-auto flex flex-row">
-                  <h1 className="text-lg text-green-600 ">author: </h1>
-                  <h1 className=" ml-2 mt-1">{element?.data.author}</h1>
-                </div>
-                <div className=" w-11/12 h-auto flex flex-row">
-                  <h1 className="text-lg text-green-600">Text: </h1>
-                  <p className=" ml-2 mt-3">{element?.data.selftext}</p>
-                </div>
-                <br />
-                <br />
-                <hr />
               </Link>
             </div>
           );
