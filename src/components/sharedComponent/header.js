@@ -1,11 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+
 import FloatIndex from "../../pages/floatingCard/floatIndex";
 import Navbar from "../indivitualsComponent/navbar";
 
-const Header = ({ showSidebar, isSideBarOpen }) => {
-  const isOpen = false;
-  useEffect(() => {}, []);
+const Header = () => {
   return (
     <div className="">
       <div className="fixed top-0 z-10 w-full bg-white">
