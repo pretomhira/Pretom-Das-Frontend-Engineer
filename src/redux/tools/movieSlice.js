@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value1: "",
   value2: "",
+  refresh: false,
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const movieSlice = createSlice({
+  name: "movies",
   initialState,
   reducers: {
     // increment: (state) => {
@@ -19,6 +20,20 @@ export const counterSlice = createSlice({
     // decrement: (state) => {
     //   state.value -= 1;
     // },
+    refresh: (state) => {
+      if (state.refresh == true) {
+        state.refresh = false;
+      } else {
+        state.refresh = true;
+      }
+    },
+
+    deselectCategory1: (state, action) => {
+      state.value1 = action.payload;
+    },
+    deselectCategory2: (state, action) => {
+      state.value2 = action.payload;
+    },
     updateCategory1: (state, action) => {
       state.value1 = action.payload;
     },
@@ -29,6 +44,12 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { updateCategory1, updateCategory2 } = counterSlice.actions;
+export const {
+  refresh,
+  deselectCategory1,
+  deselectCategory2,
+  updateCategory1,
+  updateCategory2,
+} = movieSlice.actions;
 
-export default counterSlice.reducer;
+export default movieSlice.reducer;

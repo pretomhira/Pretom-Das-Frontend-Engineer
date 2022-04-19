@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useModal } from "react-hooks-use-modal";
 import MovieList from "../../components/indivitualsComponent/movieList";
 
@@ -11,7 +12,8 @@ function Award() {
     preventScroll: true,
     closeOnOverlayClick: false,
   });
-
+  const selectedMovie = useSelector((state) => state.movies);
+  console.log(selectedMovie);
   const getResponse = async () => {
     try {
       const response = await axios.get(
@@ -24,7 +26,7 @@ function Award() {
     }
     try {
       const response = await axios.get(
-        "https://www.omdbapi.com/?apikey=888cd91f&s=superman&y=2020&type=movie"
+        "https://www.omdbapi.com/?apikey=888cd91f&s=spider-man&y=2020&type=movie"
       );
 
       setCategory2(response.data.Search);
@@ -59,10 +61,37 @@ function Award() {
         </div>
       </div>
       <Modal>
-        <div className="bg-white/70">
-          <h1>Title</h1>
-          <p>This is a customizable modal.</p>
-          <button onClick={close}>CLOSE</button>
+        <div className="bg-white max-w-lg  w-[50rem] h-[20rem]  rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white text-4xl font-bold text-gray-900 p-4 drop-shadow-lg text-center">
+            Nominated Movies
+          </div>
+          <div className="p-4 flex flex-col gap-y-2">
+            <div className=" bg-green-500/25 p-2 rounded-sm">
+              {selectedMovie.value1 === "" ? (
+                <span className="text-red-500">Movie not selected from DC</span>
+              ) : (
+                selectedMovie.value1
+              )}
+            </div>
+            <div className=" bg-green-500/25 p-2 rounded-sm">
+              {selectedMovie.value1 === "" ? (
+                <span className="text-red-500">
+                  {" "}
+                  Movie not selected from Marvel
+                </span>
+              ) : (
+                selectedMovie.value1
+              )}
+            </div>
+          </div>
+          <div className="text-center">
+            <button
+              className="bg-red-500 text-white p-2 rounded-sm"
+              onClick={close}
+            >
+              CLOSE
+            </button>
+          </div>
         </div>
       </Modal>
     </div>

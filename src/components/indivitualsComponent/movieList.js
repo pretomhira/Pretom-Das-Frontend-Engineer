@@ -1,12 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  deselectCategory1,
+  deselectCategory2,
   updateCategory1,
   updateCategory2,
-} from "../../features/counter/counterSlice";
+} from "../../redux/tools/movieSlice";
 
 const MovieList = (props) => {
-  const checkName = useSelector((state) => state.counter);
+  const checkName = useSelector((state) => state.movies);
   const dispatch = useDispatch();
   console.log(props);
   return (
@@ -23,13 +25,13 @@ const MovieList = (props) => {
                   <div className="flex flex-col justify-center">
                     <button
                       onClick={() =>
-                        props.list[1] === "one"
-                          ? dispatch(updateCategory1(element.Title))
-                          : dispatch(updateCategory2(element.Title))
+                        props.list[1] === "two"
+                          ? dispatch(updateCategory2(element.Title))
+                          : dispatch(updateCategory1(element.Title))
                       }
                     >
-                      {element.Title ===
-                      (checkName.value1 || checkName.value2) ? (
+                      {element.Title === checkName.value1 ||
+                      element.Title === checkName.value2 ? (
                         <div className="bg-green-500 text-white cursor-pointer uppercase  font-bold text-4xl transition-all duration-700 p-4 rounded-lg">
                           selected
                         </div>
@@ -39,6 +41,26 @@ const MovieList = (props) => {
                         </div>
                       )}
                     </button>
+                    <div
+                      className={`${
+                        element.Title === checkName.value1 ||
+                        element.Title === checkName.value2
+                          ? "block"
+                          : "hidden"
+                      } text-white bg-black/40 rounded-lg my-2`}
+                    >
+                      Click here to{" "}
+                      <button
+                        onClick={() =>
+                          props.list[1] === "two"
+                            ? dispatch(deselectCategory2(""))
+                            : dispatch(deselectCategory1(""))
+                        }
+                        className=" float-right uppercase bg-red-500 text-white cursor-pointer   font-bold text-sm transition-all duration-700 p-1 rounded-lg"
+                      >
+                        deselect
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

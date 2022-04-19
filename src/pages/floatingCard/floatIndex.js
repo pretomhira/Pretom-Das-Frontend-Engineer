@@ -11,7 +11,6 @@ export default function FloatIndex() {
       const data = await res.json();
 
       setFact(data.fact);
-      console.log(data.fact);
     } catch (e) {
       console.log(e);
     }

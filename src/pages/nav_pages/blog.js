@@ -2,10 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import { useParams, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Blog() {
   const { type } = useParams();
   const [children, setChildren] = useState([]);
+  const refresh = useSelector((state) => state.movies.refresh);
 
   const getData = async () => {
     try {
@@ -14,18 +16,17 @@ function Blog() {
       );
       const data = await res.json();
       setChildren(data.data.children);
-      console.log(data.data.children);
     } catch (e) {
       console.log(e);
     }
   };
   useEffect(() => {
     getData();
-  }, [type]);
+  }, [type, refresh]);
 
   return (
     <>
-      <div className=" bg-white flex flex-col gap-y-4 max-w-7xl mx-auto mt-32">
+      <div className=" bg-white flex flex-col gap-y-4 max-w-7xl mx-auto mt-28">
         {children.map((element) => {
           return (
             <div key={element?.data.id}>

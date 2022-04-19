@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "./components/sharedComponent/header";
-import { Counter } from "./features/counter/Counter";
+
 import Award from "./pages/award/award";
 
 import {
