@@ -82,8 +82,8 @@ export default function Navbar() {
           to="/award"
           className={({ isActive }) =>
             isActive
-              ? "text-black text-lg font-bold pb-4 border-b-2 border-black px-2"
-              : "text-gray-500 text-lg pb-4 px-2 hover:text-gray-900"
+              ? "text-black text-lg font-bold py-2 px-4 bg-yellow-500 rounded-lg mx-4"
+              : "text-white text-lg py-2 px-4 hover:text-gray-900 bg-yellow-500  rounded-lg mx-4 "
           }
         >
           Award

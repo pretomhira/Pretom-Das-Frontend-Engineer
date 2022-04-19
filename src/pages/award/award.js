@@ -13,7 +13,8 @@ function Award() {
     closeOnOverlayClick: false,
   });
   const selectedMovie = useSelector((state) => state.movies);
-  console.log(selectedMovie);
+  const refresh = useSelector((state) => state.movies.refresh);
+
   const getResponse = async () => {
     try {
       const response = await axios.get(
@@ -36,7 +37,7 @@ function Award() {
   };
   useEffect(() => {
     getResponse();
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="max-w-7xl mx-auto mt-32">
@@ -74,13 +75,13 @@ function Award() {
               )}
             </div>
             <div className=" bg-green-500/25 p-2 rounded-sm">
-              {selectedMovie.value1 === "" ? (
+              {selectedMovie.value2 === "" ? (
                 <span className="text-red-500">
                   {" "}
                   Movie not selected from Marvel
                 </span>
               ) : (
-                selectedMovie.value1
+                selectedMovie.value2
               )}
             </div>
           </div>
