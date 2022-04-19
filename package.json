@@ -9,20 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pretomhira/MulyticTest.git"
+    "url": "git+https://github.com/pretomhira/Pretom-Das-Frontend-Engineer.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pretomhira/MulyticTest/issues"
+    "url": "https://github.com/pretomhira/Pretom-Das-Frontend-Engineer/issues"
   },
-  "homepage": "https://github.com/pretomhira/MulyticTest#readme",
+  "homepage": "https://github.com/pretomhira/Pretom-Das-Frontend-Engineer#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "axios": "^0.26.1",
     "history": "^5.3.0",
     "react-dom": "^18.0.0",
+    "react-hooks-use-modal": "^2.1.0",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
     "redux": "^4.1.2"
