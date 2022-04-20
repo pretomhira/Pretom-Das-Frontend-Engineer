@@ -40,17 +40,17 @@ function Award() {
   }, [refresh]);
 
   return (
-    <div className="max-w-7xl mx-auto mt-32">
+    <div className="max-w-7xl mx-auto mt-20">
       <div>
-        <div className="text-2xl text-center p-8 my-2 bg-black/10">DC</div>
+        <div className="text-2xl text-center p-4 my-8 bg-black/10">DC</div>
         <MovieList list={[category1, "one"]} />
       </div>
       <div>
-        <div className="text-2xl text-center p-8 my-2 bg-black/10">Marvel</div>
+        <div className="text-2xl text-center p-4 my-8 bg-black/10">Marvel</div>
         <MovieList list={[category2, "two"]} />
       </div>
       <div className=" relative w-full h-20 bg-black/10 my-10">
-        <div className="absolute w-full h-full text-center text-2xl z-20 flex flex-row justify-center ">
+        <div className="absolute w-full h-full text-center text-2xl z-20 flex flex-row justify-center mb-10 ">
           <div className="flex flex-col justify-center h-full text-center ">
             <button
               className=" w-72 bg-yellow-500 py-2 rounded-md text-white uppercase hover:bg-yellow-600 transition duration-700"

@@ -37,6 +37,7 @@ function App() {
           <Route path="/:type" element={<Blog />} />
           <Route path="/:type/:id" element={<BlogDetail />} />
           <Route path="/award" element={<Award />} />
+          <Route component={<div>not found</div>} />
         </Routes>
         <div
           id="refresh"

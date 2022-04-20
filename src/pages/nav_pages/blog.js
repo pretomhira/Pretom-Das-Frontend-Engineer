@@ -31,7 +31,7 @@ function Blog() {
           return (
             <div key={element?.data.id}>
               <Link to={`/${type}/${element?.data.id}`}>
-                <div className="flex flex-row gap-x-4 p-4 drop-shadow-md shadow-sm hover:shadow-xl bg-white">
+                <div className="flex flex-row gap-x-4 p-4 drop-shadow-md shadow-sm hover:shadow-xl bg-white rounded-lg m-4">
                   <div
                     className={` ${
                       element.data.thumbnail == ("self" || "")
