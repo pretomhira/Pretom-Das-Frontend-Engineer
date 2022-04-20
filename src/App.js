@@ -40,9 +40,9 @@ function App() {
         </Routes>
         <div
           id="refresh"
-          className="hidden absolute top-0 left-0 w-full h-screen bg-white/40"
+          className="hidden absolute top-0 left-0 w-full h-full bg-white/40"
         >
-          <div className="flex flex-row justify-center h-full">
+          <div className=" fixed left-[50%] top-[0%] flex flex-row justify-center h-full">
             <div className="flex flex-col justify-center">
               <img className="w-10 h-10 animate-spin" src={loading} />
             </div>
