@@ -46,7 +46,7 @@ function Blog() {
                   </h1>
                 </div>
                 <div className="max-w-4xl mx-auto">
-                  <p className=" text-base text-left">
+                  <p className=" text-base text-left w-screen p-4 md:w-auto">
                     {element?.data.selftext}
                   </p>
                 </div>

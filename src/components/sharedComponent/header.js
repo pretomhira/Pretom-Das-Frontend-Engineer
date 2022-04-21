@@ -12,7 +12,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className=" w-full fixed right-2 bottom-2 z-20">
+      <div className=" w-full fixed right-2 bottom-2 z-10">
         <FloatIndex />
       </div>
     </div>
