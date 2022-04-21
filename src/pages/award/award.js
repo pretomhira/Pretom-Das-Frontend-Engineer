@@ -49,7 +49,7 @@ function Award() {
         <div className="text-2xl text-center p-4 my-8 bg-black/10">Marvel</div>
         <MovieList list={[category2, "two"]} />
       </div>
-      <div className=" relative w-full h-20 bg-black/10 my-10">
+      <div className=" relative w-full h-20 bg-none sm:bg-black/10 my-10">
         <div className="absolute w-full h-full text-center text-2xl z-20 flex flex-row justify-center mb-10 ">
           <div className="flex flex-col justify-center h-full text-center ">
             <button
