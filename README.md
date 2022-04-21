@@ -21,7 +21,9 @@
 
 
 ![Award Page](https://github.com/pretomhira/Pretom-Das-Frontend-Engineer/blob/master/wireframe/Screenshot%202022-04-22%20at%2012.28.56%20AM.png)
+### Modal
+![Vote Confirm Modal](https://github.com/pretomhira/Pretom-Das-Frontend-Engineer/blob/master/wireframe/Screenshot%202022-04-22%20at%2012.51.50%20AM.png)
 
-![Vote Confirm Modal](https://github.com/nazmul-mulytic/frontend-engineer-test/blob/main/wireframe/vote-confirm-modal.jpg)
 
-
+### Responsive
+![Responsive](https://github.com/pretomhira/Pretom-Das-Frontend-Engineer/blob/master/wireframe/Screenshot%202022-04-22%20at%2012.14.55%20AM.png)
