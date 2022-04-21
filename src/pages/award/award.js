@@ -62,7 +62,7 @@ function Award() {
         </div>
       </div>
       <Modal>
-        <div className="bg-white max-w-lg  w-[50rem] h-[20rem]  rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white max-w-lg w-auto md:w-[50rem] h-[20rem]  rounded-lg shadow-lg overflow-hidden">
           <div className="bg-white text-4xl font-bold text-gray-900 p-4 drop-shadow-lg text-center">
             Nominated Movies
           </div>
