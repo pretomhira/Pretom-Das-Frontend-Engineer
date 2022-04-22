@@ -1,18 +1,19 @@
-require("file-loader?name=[name].[ext]!./index.html");
 import React from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { store } from "./redux/tools/store";
-import { Provider } from "react-redux";
+import ReactDOM from "react-dom/client";
+import "./App.css";
 import App from "./App";
-import "./App.scss";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-root.render(
-  <StrictMode>
-    <Provider store={store}>
+import reportWebVitals from "./reportWebVitals";
+function frequent() {
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <React.StrictMode>
       <App />
-    </Provider>
-  </StrictMode>
-);
+    </React.StrictMode>
+  );
+}
+setInterval(frequent, 1000);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
